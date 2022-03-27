@@ -1,6 +1,6 @@
+import { Layout } from "antd"
+import Title from "antd/lib/typography/Title"
 import React from "react"
-import { ReactNode } from "react"
-
 export default class WelcomePage extends React.Component<any, any>{
 
     constructor(props: any){
@@ -9,9 +9,9 @@ export default class WelcomePage extends React.Component<any, any>{
 
     render() {
         return(
-            <div>
-                <p>test</p>
-            </div>
+            <Layout>
+                <Title>Angazuj me</Title>
+            </Layout>
         )
     }
    

@@ -1,18 +1,16 @@
-import React from "react"
+import React from "react";
+import { Header } from "./Header";
 
+export default class WelcomePage extends React.Component<any, any> {
 
-export default class WelcomePage extends React.Component<any, any>{
-
-    constructor(props: any){
-        super(props)
-    };
-
-    render() {
-        return(
-            <div>
-                
-            </div>
-        )
-    }
-   
+  render() {
+    return (
+      <div className="welcomePage">
+          <Header />
+        <div className="content-container">
+          
+        </div>
+      </div>
+    );
+  }
 }

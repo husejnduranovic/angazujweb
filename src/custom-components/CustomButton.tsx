@@ -1,10 +1,10 @@
 
 
 export interface IButton {
-    onClick: () => void,
+    onClick?: () => void,
     text: string,
-    buttonStyle: string,
-    buttonSize: string
+    buttonStyle?: string,
+    buttonSize?: string
 
 }
 
@@ -35,7 +35,7 @@ const CustomButton: React.FC<IButton> = (props: any) => {
        const checkingButtonSize = SIZE.includes(props.buttonSize) ? props.buttonSize : ''
  
      return (
-        <button className={`btn ${checkingButtonStyle} ${checkingButtonSize}`}>
+        <button className={`btn ${checkingButtonStyle} ${checkingButtonSize}`} onClick={props.onClick}>
             {props.text}
         </button>
      )

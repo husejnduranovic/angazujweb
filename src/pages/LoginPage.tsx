@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import EmailIcon from "../assets/icons/EmailIcon";
 import PasswordIcon from "../assets/icons/PasswordIcon";
 import { Header } from "./Header";
@@ -27,7 +27,7 @@ export default class LoginPage extends React.Component<any, any> {
 
   render() {
     return (
-        <>
+        <Fragment>
         <Header />
       <div className="container">
         <h1 className="text-center">Login</h1>
@@ -61,7 +61,7 @@ export default class LoginPage extends React.Component<any, any> {
           </button>
         </form>
       </div>
-      </>
+      </Fragment>
     );
   }
 }

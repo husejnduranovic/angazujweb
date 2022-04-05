@@ -16,6 +16,10 @@ class AuthService {
         const url = PATH + 'login';
         return HttpService.axiosPost(url, userLogin);
     }
+
+    setToken(token: string){
+        localStorage.setItem('token', token);
+    }
 };
 
 export default new AuthService();

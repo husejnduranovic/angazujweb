@@ -31,8 +31,8 @@ export default class LoginPage extends React.Component<any, any> {
     }
 
     const response = await AuthService.loginUser(userLogin);
-    console.log(userLogin);
-    console.log('response', response);
+    
+    AuthService.setToken(response?.data.token)
   }
 
   handleInputChange(e: any) {

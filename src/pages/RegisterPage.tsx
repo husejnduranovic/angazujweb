@@ -3,7 +3,15 @@ import EmailIcon from "../assets/icons/EmailIcon";
 import PasswordIcon from "../assets/icons/PasswordIcon";
 import UserIcon from "../assets/icons/UserIcon";
 import UsersIcon from "../assets/icons/UsersIcon";
+import AuthService from "../services/AuthService";
 import { Header } from "./Header";
+
+export interface IUserRegister {
+  firstName: string,
+  lastName: string,
+  email: string,
+  password: string
+}
 
 export default class RegisterPage extends React.Component<any, any> {
   constructor(props: any) {
@@ -28,7 +36,16 @@ export default class RegisterPage extends React.Component<any, any> {
 
   onSubmitRegistrationForm(e: any) {
     e.preventDefault();
-    console.log(this.state);
+
+    const user: IUserRegister = {
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      email: this.state.email,
+      password: this.state.password
+    };
+
+    const regUser = AuthService.registerUser(user);
+    console.log('reg user', regUser);
   }
 
   render() {

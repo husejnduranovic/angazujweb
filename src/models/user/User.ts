@@ -1,12 +1,12 @@
 import Model from '../../utils/Model';
 
 export interface TUser {
-    id: string;
+    id?: string;
     firstName: string;
     lastName: string;
-    contactEmail: string;
-    password: string;
-    contactPhone: number;
+    email: string;
+    password?: string;
+    contactPhone?: number;
 }
 
 const User = Model((model: TUser) => {
@@ -28,8 +28,8 @@ const User = Model((model: TUser) => {
       get contactPhone() {
         return _user.contactPhone;
       },
-      get contactEmail() {
-        return _user.contactEmail;
+      get email() {
+        return _user.email;
       }
     };
   });

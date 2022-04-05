@@ -1,8 +1,14 @@
 import React, { Fragment } from "react";
 import EmailIcon from "../assets/icons/EmailIcon";
 import PasswordIcon from "../assets/icons/PasswordIcon";
+import AuthService from "../services/AuthService";
 import { Header } from "./Header";
 
+
+export interface IUserLogin{
+  email: string;
+  password: string;
+};
 export default class LoginPage extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
@@ -16,9 +22,17 @@ export default class LoginPage extends React.Component<any, any> {
     this.onLoginFormSubmit = this.onLoginFormSubmit.bind(this);
   }
 
-  onLoginFormSubmit(e: any) {
+  async onLoginFormSubmit(e: any) {
     e.preventDefault();
-    console.log(this.state);
+
+    const userLogin: IUserLogin = {
+      email: this.state.email,
+      password: this.state.password
+    }
+
+    const response = await AuthService.loginUser(userLogin);
+    console.log(userLogin);
+    console.log('response', response);
   }
 
   handleInputChange(e: any) {

@@ -5,6 +5,8 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import JobsPage from './pages/JobsPage';
 import JobPage from "./pages/JobPage";
+import { Provider } from 'react-redux';
+import store from './store/store';
 
 function App() {
   return (

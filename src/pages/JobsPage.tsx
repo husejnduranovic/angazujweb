@@ -9,9 +9,9 @@ export default class JobsPage extends React.Component<any, any> {
     [
       {
         id: "1",
-      title: "MOLER",
-      text: "Potreban moler za okrecit stan, bice nesto i para",
-      price: 50
+        title: "MOLER",
+        text: "Potreban moler za okrecit stan, bice nesto i para",
+        price: 50
     },
       {
         id: "2",
